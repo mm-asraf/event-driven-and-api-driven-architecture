@@ -4,6 +4,7 @@ import com.asraf.architectures.model.common.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Data
 @Table(name = "tbl_order")
 public class Order {
 
@@ -28,6 +30,15 @@ public class Order {
     @Column(name = "fk_id_user_address")
     private Long fkIdAddressDetails;
 
+    @Column(name = "tracking_number")
+    private String trackingNumber;
+
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(
+        name = "tbl_order_product_ids",
+        joinColumns = @JoinColumn(name = "fk_id_order_details", referencedColumnName = "id_order_details")
+    )
+    @Column(name = "fk_id_product_details")
     private List<Long> productIds;
 
     @Column(name = "num_total_amount")
@@ -36,14 +47,6 @@ public class Order {
     @Enumerated(EnumType.STRING)
     @Column(name = "enum_status")
     private Status status;
-
-    @ManyToMany
-    @JoinColumn(referencedColumnName = "id_address_details")
-    private Address shippingAddress;
-
-    @ManyToOne
-    @JoinColumn(referencedColumnName = "id_user_details")
-    private User userDetails;
 
     @Column(name = "ts_created")
     private Timestamp tsCreated;

@@ -2,12 +2,14 @@ package com.asraf.architectures.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Entity
 @Table(name = "tbl_user")
 public class User {
@@ -40,5 +42,7 @@ public class User {
 
     @Column(name = "ts_modified")
     private Timestamp tsModified;
+
+
 
 }

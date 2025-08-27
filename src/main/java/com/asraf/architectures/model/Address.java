@@ -1,18 +1,26 @@
 package com.asraf.architectures.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+@Table(name = "tbl_address")
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_address_details")
     private Long idAddressDetails;
+
+    @Column(name = "fk_id_user_details")
+    private Long fkIdUserDetails;
 
     @Column(name = "tx_address")
     private String address;
@@ -34,4 +42,5 @@ public class Address {
 
     @Column(name = "ts_modified")
     private Timestamp tsModified;
+
 }
