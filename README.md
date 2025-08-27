@@ -394,36 +394,14 @@ psql -d architectures_db -c "SELECT * FROM pg_stat_activity;"
 ### Code Standards
 
 - **Java**: Follow Google Java Style Guide
-- **Comments**: Use Indian English tone for clarity
 - **Testing**: Minimum 80% code coverage
 - **Documentation**: Update README for new features
 
-## 📞 Support
 
-### Getting Help
-
-- **Documentation**: This README file
-- **Issues**: GitHub Issues page
-- **Team**: Development team chat
-- **Email**: tech-support@company.com
-
-### Emergency Contacts
-
-- **On-Call Engineer**: +91-98765-43210
-- **Team Lead**: +91-98765-43211
-- **DevOps**: +91-98765-43212
 
 ## 📄 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Spring Boot Team** for the excellent framework
-- **PostgreSQL Community** for the robust database
-- **Development Team** for building this architecture
-- **QA Team** for thorough testing
-
 ---
 
 **Last Updated**: December 2024  
