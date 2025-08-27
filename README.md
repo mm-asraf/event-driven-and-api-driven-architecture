@@ -1,4 +1,4 @@
-# 🚀 E-commerce Production Architecture
+#  E-commerce Hybrid (API Driven + Event Driven) Architecture
 
 ## Overview
 
@@ -397,11 +397,6 @@ psql -d architectures_db -c "SELECT * FROM pg_stat_activity;"
 - **Testing**: Minimum 80% code coverage
 - **Documentation**: Update README for new features
 
-
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 ---
 
 **Last Updated**: December 2024  
